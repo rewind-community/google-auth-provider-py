@@ -4,9 +4,6 @@ import sys
 import time
 import urllib.parse
 
-
-from starlette.exceptions import HTTPException
-
 from mcp.server.auth.provider import (
     AccessToken,
     AuthorizationCode,
@@ -17,6 +14,7 @@ from mcp.server.auth.provider import (
 )
 from mcp.shared._httpx_utils import create_mcp_http_client
 from mcp.shared.auth import OAuthClientInformationFull, OAuthToken
+from starlette.exceptions import HTTPException
 
 
 class GoogleOAuthProvider(OAuthAuthorizationServerProvider):
