@@ -8,6 +8,8 @@ dependencies = [
     # mcp only floors anyio at >=4.9, below the 4.14.2 fix for CVE-2026-63374.
     "anyio>=4.14.2",
     "mcp[cli]>=1.28.1",
+    # mcp only floors pyjwt at >=2.10.1; 2.14.0 fixes GHSA-9j54-fg26-wv3r / GHSA-w2cx-738m-mc7w / GHSA-r6x4-923q-g947 / GHSA-w6j9-cwv2-h6wq, 2.15.0 fixes GHSA-42vr-xj54-vc7v.
+    "pyjwt[crypto]>=2.15.0",
 ]
 
 [project.optional-dependencies]
