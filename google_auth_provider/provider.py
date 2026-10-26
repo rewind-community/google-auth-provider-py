@@ -107,6 +107,9 @@ class GoogleOAuthProvider(OAuthAuthorizationServerProvider):
                     }
                 ),
                 headers={"Content-Type": "application/x-www-form-urlencoded"},
+                # mcp>=1.30 no longer enables follow_redirects on this client;
+                # keep the pre-1.30 behaviour for the Google token exchange.
+                follow_redirects=True,
             )
             http_response.raise_for_status()
             access_response = http_response.json()
